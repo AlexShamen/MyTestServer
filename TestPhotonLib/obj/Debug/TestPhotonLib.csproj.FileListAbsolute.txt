@@ -3,3 +3,9 @@ C:\Photon\deploy\MyServerFolder\bin\TestPhotonLib.dll
 C:\Photon\deploy\MyServerFolder\bin\TestPhotonLib.pdb
 C:\Photon\PhotonTesting\TestPhotonLib\obj\Debug\TestPhotonLib.dll
 C:\Photon\PhotonTesting\TestPhotonLib\obj\Debug\TestPhotonLib.pdb
+C:\Users\Компьютер\Documents\MyTestServer\TestPhotonLib\obj\Debug\TestPhotonLib.csprojResolveAssemblyReference.cache
+C:\Users\Компьютер\Documents\MyTestServer\TestPhotonLib\obj\Debug\TestPhotonLib.dll
+C:\Users\Компьютер\Documents\MyTestServer\TestPhotonLib\obj\Debug\TestPhotonLib.pdb
+C:\Users\Компьютер\Documents\deploy\MyServerFolder\bin\log4net.config
+C:\Users\Компьютер\Documents\deploy\MyServerFolder\bin\TestPhotonLib.dll
+C:\Users\Компьютер\Documents\deploy\MyServerFolder\bin\TestPhotonLib.pdb

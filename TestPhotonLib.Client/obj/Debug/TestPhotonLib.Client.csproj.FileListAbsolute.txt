@@ -1,0 +1,5 @@
+C:\Users\Компьютер\Documents\MyTestServer\TestPhotonLib.Client\obj\Debug\TestPhotonLib.Client.csprojResolveAssemblyReference.cache
+C:\Users\Компьютер\Documents\MyTestServer\MyTestServerUnityProject\Assets\Plugins\TestPhotonLib.Client.dll
+C:\Users\Компьютер\Documents\MyTestServer\MyTestServerUnityProject\Assets\Plugins\TestPhotonLib.Client.pdb
+C:\Users\Компьютер\Documents\MyTestServer\TestPhotonLib.Client\obj\Debug\TestPhotonLib.Client.dll
+C:\Users\Компьютер\Documents\MyTestServer\TestPhotonLib.Client\obj\Debug\TestPhotonLib.Client.pdb
