@@ -20,7 +20,7 @@ public class PhotonServer : IPhotonPeerListener
 		get { return _instance; }
 	}
 
-	private PhotonPeer PhotonPeer { get; set; }
+	public PhotonPeer PhotonPeer { get; set; }
 
 
 
