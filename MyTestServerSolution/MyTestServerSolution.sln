@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPhotonLib", "..\TestPhotonLib\TestPhotonLib.csproj", "{912403F5-610B-4225-A09E-4AE81DCB140D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPhotonLib.Common", "..\TestPhotonLib.Common\TestPhotonLib.Common.csproj", "{D1DA5BFC-72F8-4800-BBEA-FA95E86261A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{912403F5-610B-4225-A09E-4AE81DCB140D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{912403F5-610B-4225-A09E-4AE81DCB140D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{912403F5-610B-4225-A09E-4AE81DCB140D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{912403F5-610B-4225-A09E-4AE81DCB140D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1DA5BFC-72F8-4800-BBEA-FA95E86261A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1DA5BFC-72F8-4800-BBEA-FA95E86261A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1DA5BFC-72F8-4800-BBEA-FA95E86261A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1DA5BFC-72F8-4800-BBEA-FA95E86261A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

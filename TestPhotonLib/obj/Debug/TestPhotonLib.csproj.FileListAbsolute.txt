@@ -1,0 +1,5 @@
+C:\Photon\deploy\MyServerFolder\bin\log4net.config
+C:\Photon\deploy\MyServerFolder\bin\TestPhotonLib.dll
+C:\Photon\deploy\MyServerFolder\bin\TestPhotonLib.pdb
+C:\Photon\PhotonTesting\TestPhotonLib\obj\Debug\TestPhotonLib.dll
+C:\Photon\PhotonTesting\TestPhotonLib\obj\Debug\TestPhotonLib.pdb
