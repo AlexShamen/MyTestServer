@@ -4,7 +4,7 @@ using System.Collections;
 public class PhotonServerIn : MonoBehaviour 
 {
 	
-	public string Name { get; set; }
+	public string Name;
 	public GameObject PlayerPrefab;
 	
 	PhotonServer _photonServer;
@@ -16,9 +16,7 @@ public class PhotonServerIn : MonoBehaviour
 	
 	
 	void Awake()
-	{
-		Name = "bulochka";
-		
+	{	
 		if(PhotonServer.Instance != null)
 		{
 			DestroyObject(gameObject);
@@ -34,6 +32,7 @@ public class PhotonServerIn : MonoBehaviour
 		_photonServer.DebugLogHandle = DebugLog;
 		_photonServer.CreatePlayer = CreatePlayer;
 		_photonServer.MovePlayer = MovePlayer;
+		_photonServer.ClientName = Name;
 		
 		Vector3 pos = transform.position;
 		_photonServer.SendOperation_Position(10, pos);
@@ -86,10 +85,13 @@ public class PhotonServerIn : MonoBehaviour
 	
 	void MovePlayer(string id, Vector3 position)
 	{
-		if (id!=Name)
+		if (id != Name)
 		{
 			GameObject obj = GameObject.Find(id);
-			obj.transform.position = position;
+			if (obj != null)
+			{
+				obj.transform.position = position;
+			}
 		}
 	}
 	
