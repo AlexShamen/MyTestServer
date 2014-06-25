@@ -3,6 +3,7 @@ using ExitGames.Client.Photon;
 using System.Collections.Generic;
 using TestPhotonLib.Common;
 using System;
+using UnityEngine;
 
 
 
@@ -12,36 +13,7 @@ using System;
 public class PhotonServer : IPhotonPeerListener
 {
 
-    #region
-
-    [Serializable]
-    public class MyVector3
-    {
-        public float X;
-        public float Y;
-        public float Z;
-
-        public MyVector3()
-        {
-            X = 0;
-            Y = 0;
-            Z = 0;
-        }
-
-        public MyVector3(float x, float y, float z)
-        {
-            X = x;
-            Y = y; 
-            Z = z;
-        }
-
-    }
-
-    public delegate void PlayerPositionDelegate(string id, MyVector3 position);
-
-    #endregion
-
-
+    public delegate void PlayerPositionDelegate(string id, Vector3 position);
     private string ConnectionString;
 	private string AppName;
 
@@ -54,7 +26,7 @@ public class PhotonServer : IPhotonPeerListener
 	public PhotonPeer PhotonPeer { get; set; }
 
     public string ClientName { get; set; }
-    public MyVector3 Position { get; set; }
+    public Vector3 Position { get; set; }
 
     public PlayerPositionDelegate CreatePlayer;
     public PlayerPositionDelegate MovePlayer;
@@ -105,14 +77,14 @@ public class PhotonServer : IPhotonPeerListener
             case 10:
                 if (CreatePlayer != null)
                 {
-                    CreatePlayer((string)eventData.Parameters[1], (MyVector3)eventData.Parameters[2]);
+                    CreatePlayer((string)eventData.Parameters[1], (Vector3)eventData.Parameters[2]);
                 }
                 break;
 
             case 20:
                 if (MovePlayer != null)
                 {
-                    MovePlayer((string)eventData.Parameters[1], (MyVector3)eventData.Parameters[2]);
+                    MovePlayer((string)eventData.Parameters[1], (Vector3)eventData.Parameters[2]);
                 }
                 break;
 
@@ -164,13 +136,13 @@ public class PhotonServer : IPhotonPeerListener
         }
     }
 
-    public void SendOperation_Position(byte operationCode, float x, float y, float z)
+    public void SendOperation_Position(byte operationCode, Vector3 position)
     {
         switch (operationCode)
         {
             case 10:
             case 20:
-                PhotonPeer.OpCustom(operationCode, new Dictionary<byte, object> { { 1, ClientName }, { 2, new MyVector3(x, y, z) } }, false);
+                PhotonPeer.OpCustom(operationCode, new Dictionary<byte, object> { { 1, ClientName }, { 2, position } }, false);
                 break;
         }
     }
