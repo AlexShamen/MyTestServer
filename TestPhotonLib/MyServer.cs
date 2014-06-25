@@ -16,6 +16,8 @@ namespace TestPhotonLib
 
         protected override PeerBase CreatePeer(InitRequest initRequest)
         {
+            Log.Debug("communication:   " + Peers.Count);
+
             PeerBase peer = new UnityClient(initRequest.Protocol, initRequest.PhotonPeer);
             Peers.Add(peer);
             return peer;
