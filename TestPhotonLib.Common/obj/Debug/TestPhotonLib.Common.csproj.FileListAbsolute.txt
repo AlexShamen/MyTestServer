@@ -4,3 +4,4 @@ C:\Users\Компьютер\Documents\MyTestServer\TestPhotonLib.Common\obj\Debu
 C:\Users\Компьютер\Documents\MyTestServer\TestPhotonLib.Common\obj\Debug\TestPhotonLib.Common.pdb
 C:\Users\Компьютер\Documents\MyTestServer\MyTestServerUnityProject\Assets\Plugins\TestPhotonLib.Common.dll
 C:\Users\Компьютер\Documents\MyTestServer\MyTestServerUnityProject\Assets\Plugins\TestPhotonLib.Common.pdb
+C:\Users\Компьютер\Documents\MyTestServer\TestPhotonLib.Common\obj\Debug\TestPhotonLib.Common.csprojResolveAssemblyReference.cache
