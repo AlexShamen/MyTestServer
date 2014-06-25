@@ -42,8 +42,8 @@ public class PhotonServer : IPhotonPeerListener
     #endregion
 
 
-    private string ConnectionString = "192.168.1.75:4530";
-	private string AppName = "MyTestServer";
+    private string ConnectionString;
+	private string AppName;
 
 	private static PhotonServer _instance;
 	public static PhotonServer Instance 
@@ -62,9 +62,15 @@ public class PhotonServer : IPhotonPeerListener
 
 
 
-
-    public PhotonServer()
+    /// <summary>
+    /// 192.168.1.75:4530
+    /// windowsseven1:4530
+    /// </summary>
+    public PhotonServer(string conStr = "192.168.1.75:4530", string appName = "MyTestServer")
     {
+        ConnectionString = conStr;
+        AppName = appName;
+
         _instance = this;
 
         PhotonPeer = new PhotonPeer(this, ConnectionProtocol.Tcp);
@@ -183,16 +189,6 @@ public class PhotonServer : IPhotonPeerListener
     {
         if (DebugLogHandle != null)
             DebugLogHandle(message);
-    }
-
-    /// <summary>
-    /// 192.168.1.75:4530
-    /// windowsseven1:4530
-    /// </summary>
-    /// <param name="conStr"></param>
-    public void SetConnectionString(string conStr)
-    {
-        ConnectionString = conStr;
     }
 
     #endregion
