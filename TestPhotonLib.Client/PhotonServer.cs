@@ -15,15 +15,15 @@ public class PhotonServer : IPhotonPeerListener
 
     public delegate void PlayerPositionDelegate(string id, Vector3 position);
     private string ConnectionString;
-	private string AppName;
+    private string AppName;
 
-	private static PhotonServer _instance;
-	public static PhotonServer Instance 
-	{
-		get { return _instance; }
-	}
+    private static PhotonServer _instance;
+    public static PhotonServer Instance
+    {
+        get { return _instance; }
+    }
 
-	public PhotonPeer PhotonPeer { get; set; }
+    public PhotonPeer PhotonPeer { get; set; }
 
     public string ClientName { get; set; }
     public Vector3 Position { get; set; }
@@ -52,15 +52,15 @@ public class PhotonServer : IPhotonPeerListener
         ErrorCode errorCode = new ErrorCode();
     }
 
-    
-    
-    
-    
+
+
+
+
     #region IPhotonPeerListener implementation
 
     public void DebugReturn(DebugLevel level, string message)
     {
-        
+
     }
 
     public void OnEvent(EventData eventData)
@@ -77,14 +77,16 @@ public class PhotonServer : IPhotonPeerListener
             case 10:
                 if (CreatePlayer != null)
                 {
-                    CreatePlayer((string)eventData.Parameters[1], (Vector3)eventData.Parameters[2]);
+                    Vector3 pos = new Vector3((float)eventData.Parameters[2], (float)eventData.Parameters[3], (float)eventData.Parameters[4]);
+                    CreatePlayer((string)eventData.Parameters[1], pos);
                 }
                 break;
 
             case 20:
                 if (MovePlayer != null)
                 {
-                    MovePlayer((string)eventData.Parameters[1], (Vector3)eventData.Parameters[2]);
+                    Vector3 pos = new Vector3((float)eventData.Parameters[2], (float)eventData.Parameters[3], (float)eventData.Parameters[4]);
+                    MovePlayer((string)eventData.Parameters[1], pos);
                 }
                 break;
 
@@ -127,7 +129,7 @@ public class PhotonServer : IPhotonPeerListener
 
     public void SendOperation(byte operationCode)
     {
-        switch(operationCode)
+        switch (operationCode)
         {
             case 1:
             case 2:
@@ -142,7 +144,13 @@ public class PhotonServer : IPhotonPeerListener
         {
             case 10:
             case 20:
-                PhotonPeer.OpCustom(operationCode, new Dictionary<byte, object> { { 1, ClientName }, { 2, position } }, false);
+                Dictionary<byte, object> dic = new Dictionary<byte, object> 
+                {
+                    { 1, ClientName }, 
+                    { 2, position.x }, { 3, position.y }, { 4, position.z }
+                };
+
+                PhotonPeer.OpCustom(operationCode, dic, false);
                 break;
         }
     }
