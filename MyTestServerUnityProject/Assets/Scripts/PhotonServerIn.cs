@@ -78,7 +78,7 @@ public class PhotonServerIn : MonoBehaviour
 	{
 		if (id != Name && PlayerPrefab != null)
 		{
-			GameObject obj = GameObject.Instantiate(PlayerPrefab);
+			GameObject obj = (GameObject) GameObject.Instantiate(PlayerPrefab);
 			obj.name = id;
 			obj.transform.position = new Vector3(position.X, position.Y, position.Z);
 		}
