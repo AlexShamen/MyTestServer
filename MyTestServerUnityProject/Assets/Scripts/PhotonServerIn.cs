@@ -30,7 +30,7 @@ public class PhotonServerIn : MonoBehaviour
 	
 	void Start () 
 	{
-		_photonServer = new PhotonServer();
+		_photonServer = new PhotonServer("192.168.1.20:4530");
 		_photonServer.DebugLogHandle = DebugLog;
 		_photonServer.CreatePlayer = CreatePlayer;
 		_photonServer.MovePlayer = MovePlayer;
