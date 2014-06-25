@@ -4,6 +4,7 @@ using ExitGames.Logging.Log4Net;
 using Photon.SocketServer;
 using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace TestPhotonLib
 {
@@ -11,9 +12,13 @@ namespace TestPhotonLib
     {
         private readonly ILogger Log = LogManager.GetCurrentClassLogger();
 
+        public static List<PeerBase> Peers = new List<PeerBase>();
+
         protected override PeerBase CreatePeer(InitRequest initRequest)
         {
-            return new UnityClient(initRequest.Protocol, initRequest.PhotonPeer);
+            PeerBase peer = new UnityClient(initRequest.Protocol, initRequest.PhotonPeer);
+            Peers.Add(peer);
+            return peer;
         }
 
         protected override void Setup()

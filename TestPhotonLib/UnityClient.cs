@@ -52,6 +52,30 @@ namespace TestPhotonLib
                         SendEvent(eventData, sendParameters);
                     }
                     break;
+                case 10: // CREATE
+                    if (operationRequest.Parameters.Count == 2)
+                    {
+                        EventData eventData = new EventData()
+                        {
+                            Code = 10,
+                            Parameters = operationRequest.Parameters
+                        };
+                        
+                        ApplicationBase.Instance.BroadCastEvent(eventData, MyServer.Peers, sendParameters);
+                    }
+                    break;
+                case 20: // MOVE
+                    if (operationRequest.Parameters.Count == 2)
+                    {
+                        EventData eventData = new EventData()
+                        {
+                            Code = 20,
+                            Parameters = operationRequest.Parameters
+                        };
+                        
+                        ApplicationBase.Instance.BroadCastEvent(eventData, MyServer.Peers, sendParameters);
+                    }
+                    break;
                 default:
                     Log.Debug("Unknown operation code:   " + operationRequest.OperationCode);
                     break;
@@ -59,4 +83,5 @@ namespace TestPhotonLib
         }
 
     }
+
 }
