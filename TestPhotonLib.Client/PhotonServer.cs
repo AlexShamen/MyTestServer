@@ -79,6 +79,7 @@ public class PhotonServer : IPhotonPeerListener
                 {
                     Vector3 pos = new Vector3((float)eventData.Parameters[2], (float)eventData.Parameters[3], (float)eventData.Parameters[4]);
                     CreatePlayer((string)eventData.Parameters[1], pos);
+                    DebugLog("CreatePlayer Name:   " + eventData.Parameters[1] + ", Position:   " + pos);
                 }
                 break;
 
@@ -87,6 +88,7 @@ public class PhotonServer : IPhotonPeerListener
                 {
                     Vector3 pos = new Vector3((float)eventData.Parameters[2], (float)eventData.Parameters[3], (float)eventData.Parameters[4]);
                     MovePlayer((string)eventData.Parameters[1], pos);
+                    DebugLog("CreatePlayer Name:   " + eventData.Parameters[1] + ", Position:   " + pos);
                 }
                 break;
 
@@ -149,6 +151,8 @@ public class PhotonServer : IPhotonPeerListener
                     { 1, ClientName }, 
                     { 2, position.x }, { 3, position.y }, { 4, position.z }
                 };
+
+                DebugLog("SendOperation_Position:   " + dic[1] + ", X: " + dic[2] + ", Y: " + dic[3] + ", Z: " + dic[4]);
 
                 PhotonPeer.OpCustom(operationCode, dic, false);
                 break;
