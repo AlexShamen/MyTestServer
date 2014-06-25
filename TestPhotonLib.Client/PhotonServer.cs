@@ -42,8 +42,8 @@ public class PhotonServer : IPhotonPeerListener
     #endregion
 
 
-    private const string ConnectionString = "192.168.1.75:4530";
-	private const string AppName = "MyTestServer";
+    private string ConnectionString = "192.168.1.75:4530";
+	private string AppName = "MyTestServer";
 
 	private static PhotonServer _instance;
 	public static PhotonServer Instance 
@@ -183,6 +183,16 @@ public class PhotonServer : IPhotonPeerListener
     {
         if (DebugLogHandle != null)
             DebugLogHandle(message);
+    }
+
+    /// <summary>
+    /// 192.168.1.75:4530
+    /// windowsseven1:4530
+    /// </summary>
+    /// <param name="conStr"></param>
+    public void SetConnectionString(string conStr)
+    {
+        ConnectionString = conStr;
     }
 
     #endregion
